@@ -3,33 +3,59 @@
     <head>
         <title>yaaaay.me</title>
         <style>
-            html {
-                height: 100%;
-            }
+            html { height: 100%; }
 
             body {
                 background: rgb(255,162,130);
                 background: linear-gradient(148deg, rgba(255,162,130,1) 0%, rgba(146,186,210,1) 61%, rgba(121,232,255,1) 89%);
                 background-repeat: no-repeat;
                 text-align: center;
-            }
 
-            .hello {
-                color: rgb(6, 86, 136);
-            }
-
-            .world {
-                color: rgb(235, 112, 72);
-            }
-
-            h1 {
-                color: white;
-                font-size: 60px;
                 /* Adapted from: https://meta.stackexchange.com/questions/36176/whats-the-font-used-in-code-blocks/36178 */
                 /* Font for code block */
                 font-family: Consolas, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New;
+                color: white;
             }
 
+            h1 { font-size: 60px; }
+
+            .hello { color: rgb(6, 86, 136); }
+
+            .world { color: rgb(235, 112, 72); }
+            
+            /* .typewriter class adapted from https://css-tricks.com/snippets/css/typewriter-effect/ */
+            /* Creates a typewriter box */
+            .typewriter {
+                overflow: hidden;
+                border-right: .15em solid rgb(6, 86, 136);
+                white-space: nowrap;
+                margin: 0 0;
+                letter-spacing: .15em;
+                max-width: 75%;
+                height: fit-content;
+                animation: 
+                    typing 3.5s steps(40, end),
+                    blink-caret .75s step-end infinite;
+            }
+
+            .container {
+                width: 100%;
+                padding: 20px 0px;
+                display: flex;
+                justify-content: center;
+            }
+
+            /* Animations adapted from https://css-tricks.com/snippets/css/typewriter-effect/ */
+            /* Typewriter animations */
+            @keyframes typing {
+                from { width: 0 }
+                to { width: 100% }
+            }
+
+            @keyframes blink-caret {
+                from, to { border-color: transparent }
+                50% { border-color: rgb(6, 86, 136); }
+            }
         </style>
     </head>
     <body>
@@ -37,5 +63,12 @@
             &lt<span class="hello">Hello</span><span class="world">World</span> /&gt
         </h1>
         <img alt="" src="images/coder.gif" />
+        <div class="container">
+            <div class="typewriter">
+                <p>
+                    Hi! I'm Lizzie. I don't really know what to write here, but I'm really excited for CS52!!
+                </p>
+            </div>
+        </div>
     </body>
 </html>
